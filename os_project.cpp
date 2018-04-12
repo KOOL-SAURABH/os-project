@@ -138,7 +138,7 @@ int main()
 
 	queue< P_d > rq; 
 	int cpu_state = 0; 
-	int quantum = 4 ; 
+	int quantum = 2 ; 
 	current.Pid = -2;
 	current.Priority = 999999;
 
@@ -162,7 +162,7 @@ int main()
 				cpu_state = 1;
 				pq_process = 1;
 				pq.pop();
-				quantum = 4; 
+				quantum = 2; 
 			}
 			else if(!rq.empty())
 			{
@@ -170,7 +170,7 @@ int main()
 				cpu_state = 1;
 				rq_process = 1;
 				rq.pop();
-				quantum = 4;
+				quantum = 2;
 			}
 		}
 		else if(cpu_state == 1) 
@@ -182,7 +182,7 @@ int main()
 					rq.push(current); 
 					current = pq.top();
 					pq.pop();
-					quantum = 4; 
+					quantum = 2; 
 				}
 			}
 			else if(rq_process == 1 && (!pq.empty())) 
@@ -192,7 +192,7 @@ int main()
 				pq.pop();
 				rq_process = 0;
 				pq_process = 1;
-				quantum = 4 ;
+				quantum = 2 ;
 			}
 			
 
@@ -207,7 +207,7 @@ int main()
 			if(current.R_time == 0) 
 			{
 				cpu_state = 0 ;
-				quantum = 4 ;
+				quantum = 2 ;
 				current.Pid = -2;
 				current.Priority = 999999;
 				rq_process = 0;
