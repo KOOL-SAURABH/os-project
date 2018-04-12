@@ -63,8 +63,6 @@ struct comPare
 	}
 	
 };
-
-/**To check the Input **/
 void my_check(vector<P_d> mv)
 {
 	for(unsigned int i= 0; i < mv.size() ;i++)
@@ -156,7 +154,7 @@ int main()
 		}
 		
 
-		if(cpu_state == 0) //If CPU idle
+		if(cpu_state == 0) 
 		{
 			if(!pq.empty())
 			{
@@ -201,12 +199,12 @@ int main()
 		}
 
 
-		if(current.Pid != -2) // Process Execution
+		if(current.Pid != -2) 
 		{
 			current.R_time--;
 			quantum--;
 			Ghant[clock] = current.Pid;
-			if(current.R_time == 0) //If process Finish
+			if(current.R_time == 0) 
 			{
 				cpu_state = 0 ;
 				quantum = 4 ;
